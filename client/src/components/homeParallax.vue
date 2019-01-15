@@ -12,12 +12,15 @@ div.proot
 export default {
   mounted: function(){
     // Parallax Effect
-    const scrollSpeed = 0.2 // This is % of scroll speed: 0 Image is static, 1 no parallax effect
-    const parallax = document.getElementsByClassName('pimage')[0]
-    window.addEventListener("scroll", function(){
-      let offset = window.pageYOffset
-      parallax.style.backgroundPositionY = -offset * scrollSpeed + "px"
-    })
+    // Does not work on mobile
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+      const scrollSpeed = 0.2 // This is % of scroll speed: 0 Image is static, 1 no parallax effect
+      const parallax = document.getElementsByClassName('pimage')[0]
+      window.addEventListener("scroll", function(){
+        let offset = window.pageYOffset
+        parallax.style.backgroundPositionY = -offset * scrollSpeed + "px"
+      })
+    }
   }
 }
 </script>
@@ -33,11 +36,9 @@ export default {
   right:0
   top:0
   bottom:0
-  background url('http://localhost:5000/static/img.jpg')
-  background-size: 150%
+  background url('../../public/img.jpg') 50% 0px no-repeat fixed
+  background-size cover
   background-repeat no-repeat
-  background-position 50% 0px
-  background-attachment fixed
   z-index:1
  
 .pcontent
@@ -50,7 +51,7 @@ export default {
   transform translate(-50%)
   text-align center
   font-size 1.5em
-  z-index 2
+  z-index 1
   color white
 </style>
 
