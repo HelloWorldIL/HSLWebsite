@@ -1,0 +1,42 @@
+{
+  "name": "schoolwebapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "SET NODE_ENV=development & nodemon --max-old-space-size=8192 --watch server server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "eslint": "^5.12.0",
+    "express": "^4.16.4",
+    "firebase-admin": "^6.4.0",
+    "parcel-bundler": "^1.11.0",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "vue": "^2.5.21",
+    "vue-hot-reload-api": "^2.3.1",
+    "vue-mouse-parallax": "^0.9.2",
+    "vue-nprogress": "^0.1.5",
+    "vue-router": "^3.0.2",
+    "vue-socket.io": "^3.0.4",
+    "vuetify": "^1.4.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.4.0",
+    "nodemon": "^1.18.9",
+    "pug": "^2.0.3",
+    "sass": "^1.15.3",
+    "stylus": "^0.54.5",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js",
+    "uws": false
+  }
+}
