@@ -26,7 +26,8 @@ export default {
 
 <style lang="stylus">
   body
-    font: 12px Helvetica, Arial, sans-serif
+    font-size: 20px
+    font-family: 'Open Sans', sans-serif;
 section
   text-align: center
   padding: 50px 80px

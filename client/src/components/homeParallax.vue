@@ -39,6 +39,7 @@ export default {
   background url('../../public/img.jpg') 50% 0px no-repeat fixed
   background-size cover
   background-repeat no-repeat
+  filter brightness(0.7)
   z-index:1
  
 .pcontent

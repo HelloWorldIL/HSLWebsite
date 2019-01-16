@@ -2,7 +2,7 @@ const home = {
   state: {
     heading: "Meet Hoopoe",
     subHeading: "Israel's First Student Satellite",
-    data: "Its alive!"
+    data: "Hello World!"
   }
 }
 

@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    v-app()
+    v-app
       header
         navigation
       router-view
