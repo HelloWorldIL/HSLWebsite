@@ -1,11 +1,12 @@
-import Vue from 'vue';
+import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueSocketIO from 'vue-socket.io'
 import Vuetify from 'vuetify'
 
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'vuetify/dist/vuetify.min.css'
-import colors from 'vuetify/lib/util/colors';
+import colors from 'vuetify/lib/util/colors'
 
 import { store } from './services/store/store'
 
@@ -31,7 +32,7 @@ Vue.use(new VueSocketIO({
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
   components: { App },
+  template: '<App/>',
   store: store
 })

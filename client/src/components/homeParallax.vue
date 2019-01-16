@@ -1,11 +1,11 @@
 <template lang="pug">
-div.proot
-  div.pimage
-  div.pcontent
-    h1 {{$store.state.home.heading}}
-    h1 {{$store.state.home.subHeading}}
-    router-link(tag="div" to="/login")
-      v-btn() Explore Hoopoe
+  div.proot
+    div.pimage
+    div.pcontent
+      h1 {{$store.state.home.heading}}
+      h1 {{$store.state.home.subHeading}}
+      router-link(tag="div" to="/login")
+        v-btn() Explore Hoopoe
 </template>
 
 <script>
@@ -16,9 +16,9 @@ export default {
     if (!/Mobi|Android/i.test(navigator.userAgent)) {
       const scrollSpeed = 0.2 // This is % of scroll speed: 0 Image is static, 1 no parallax effect
       const parallax = document.getElementsByClassName('pimage')[0]
-      window.addEventListener("scroll", function(){
+      window.addEventListener('scroll', function(){
         let offset = window.pageYOffset
-        parallax.style.backgroundPositionY = -offset * scrollSpeed + "px"
+        parallax.style.backgroundPositionY = -offset * scrollSpeed + 'px'
       })
     }
   }

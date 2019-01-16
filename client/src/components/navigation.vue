@@ -5,26 +5,31 @@
     ul.nav-links
       li(v-for="navItem in $store.state.navigation.items")
         a {{navItem.title}}
+      li.login
+        v-btn(color="info" depressed)
+          span(style="margin-right: 5px") Login
+          v-icon(dark) lock_open
+			
 </template>
 
 <script>
 export default {
   data: function() {
-    return {};
+    return {}
   },
   mounted: function() {
-    const nav = document.getElementsByClassName("topNav")[0];
-    window.addEventListener("scroll", () => {
-      let offset = window.pageYOffset;
+    const nav = document.getElementsByClassName('topNav')[0]
+    window.addEventListener('scroll', () => {
+      let offset = window.pageYOffset
       if (offset > document.body.clientHeight/4) {
-        nav.classList.add("scrolled")
+        nav.classList.add('scrolled')
       }
       else{
-        nav.classList.remove("scrolled")
+        nav.classList.remove('scrolled')
       }
-    });
+    })
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -55,6 +60,12 @@ nav.topNav
   font-size: 26px;
   line-height: navbarHeight;
 }
+.login{
+  position absolute
+  top 0
+  right 0
+  padding 0 48px
+}
 
 .nav-links {
   margin-right: 8%;
@@ -80,7 +91,7 @@ nav.topNav
       border: solid 1px transparent;
     }
 
-    :hover {
+    a:hover {
       background-color: linkHoverColor;
       opacity: 1;
       border-bottom: solid 1px white;
