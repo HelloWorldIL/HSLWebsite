@@ -4,11 +4,7 @@
       h1 HSL
     ul.nav-links
       li(v-for="navItem in $store.state.navigation.items")
-        a {{navItem.title}}
-      li.login
-        v-btn(color="info" depressed)
-          span(style="margin-right: 5px") Login
-          v-icon(dark) lock_open
+        router-link(tag="a" :to="navItem.link") {{navItem.title}}
 			
 </template>
 
@@ -21,10 +17,9 @@ export default {
     const nav = document.getElementsByClassName('topNav')[0]
     window.addEventListener('scroll', () => {
       let offset = window.pageYOffset
-      if (offset > document.body.clientHeight/4) {
+      if (offset > document.body.clientHeight / 4) {
         nav.classList.add('scrolled')
-      }
-      else{
+      } else {
         nav.classList.remove('scrolled')
       }
     })
@@ -33,21 +28,25 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-navbarHeight = 5vh;
+navbarHeight = 7vh;
 linkHoverColor = rgba(26, 31, 35, 0.5);
 
-nav.topNav
+nav.topNav {
   z-index: 2;
   display: flex;
   justify-content: flex-end;
   min-height: navbarHeight;
   position: fixed;
-  width: 100vw;
-  transition 1s
+  width: 90vw;
+  margin-left 5vw
+  transition: 1s;
+  margin-top: 15px;
+  border-radius 50px
+}
 
-.scrolled
-  background-color rgba(31, 40, 56, 0.8)
-  
+.scrolled {
+  background-color: rgba(31, 40, 56, 0.9);
+}
 
 .logo {
   position: absolute;
@@ -60,15 +59,10 @@ nav.topNav
   font-size: 26px;
   line-height: navbarHeight;
 }
-.login{
-  position absolute
-  top 0
-  right 0
-  padding 0 48px
-}
+
 
 .nav-links {
-  margin-right: 8%;
+  margin-right: 180px;
   display: flex;
   justify-content: center;
   list-style: none;
@@ -80,18 +74,21 @@ nav.topNav
     align-items: stretch;
     justify-content: stretch;
 
-    a {
+    > a {
       font-size: 14px;
+      font-weight: normal;
       color: white;
       letter-spacing: 3px;
       line-height: navbarHeight;
       transition: 0.25s ease-in-out;
       padding: 0px 25px;
       opacity: 0.7;
+      letter-spacing: 3px;
       border: solid 1px transparent;
+      text-decoration none
     }
 
-    a:hover {
+    a:hover, a.selected {
       background-color: linkHoverColor;
       opacity: 1;
       border-bottom: solid 1px white;

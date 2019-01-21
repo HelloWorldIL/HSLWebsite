@@ -8,22 +8,22 @@
 <script>
 
 export default {
-	data () {
-		return {
-			isConnected: false
-		}
-	},
-	sockets: {
-		connect(){
-			console.log('Socket Connected to server!')
-			this.isConnected = true
-		}
-	},	
-	methods: {
-		connecting : function (event){
-			this.$socket.emit('emit_method', 'wow')
-		}
-	},
+  data () {
+    return {
+      isConnected: false
+    }
+  },
+  sockets: {
+    connect(){
+      console.log('Socket Connected to server!')
+      this.isConnected = true
+    }
+  },	
+  methods: {
+    connecting : function (event){
+      this.$socket.emit('emit_method', 'wow')
+    }
+  },
 }
 </script>
 

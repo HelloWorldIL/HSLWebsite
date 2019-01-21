@@ -1,9 +1,8 @@
 <template lang="pug">
   div
-    v-app
-      header
+    header
         navigation
-      router-view
+    router-view(class="main")
 </template>
 
 <script>

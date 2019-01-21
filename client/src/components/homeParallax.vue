@@ -6,10 +6,18 @@
       h1 {{$store.state.home.subHeading}}
       router-link(tag="div" to="/login")
         v-btn() Explore Hoopoe
+      scrollIndicator()
+    
 </template>
 
 <script>
+import scrollIndicator from './scrollIndicator'
+
 export default {
+  components: {
+    scrollIndicator
+  },
+
   mounted: function(){
     // Parallax Effect
     // Does not work on mobile
@@ -27,7 +35,6 @@ export default {
 
 <style lang="stylus" scoped>
 .proot
-  position relative
   height 100vh
   overflow hidden
 .pimage
@@ -39,7 +46,7 @@ export default {
   background url('../../public/img.jpg') 50% 0px no-repeat fixed
   background-size cover
   background-repeat no-repeat
-  filter brightness(0.7)
+  filter brightness(0.9)
   z-index:1
  
 .pcontent
