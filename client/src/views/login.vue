@@ -1,32 +1,12 @@
 <template lang="pug">
-	v-container(grid-list-md text-xs-center)
-		v-btn(small color='primary' @click='connecting') BTN
-		h1 Wow
+	div.wrapper
+    v-form(v-model="valid")
+      v-text-field(v-model="firstname" label="First Name")
 </template>
 
-
-<script>
-
-export default {
-  data () {
-    return {
-      isConnected: false
-    }
-  },
-  sockets: {
-    connect(){
-      console.log('Socket Connected to server!')
-      this.isConnected = true
-    }
-  },	
-  methods: {
-    connecting : function (event){
-      this.$socket.emit('emit_method', 'wow')
-    }
-  },
-}
-</script>
-
-<style lang="stylus">
-@import './test'
+<style lang="stylus" scoped>
+.wrapper
+  display grid
+  height: 100vh
+  padding-top 7vh
 </style>

@@ -5,7 +5,7 @@
       h1 {{$store.state.home.heading}}
       h1 {{$store.state.home.subHeading}}
       router-link(tag="div" to="/login")
-        v-btn() Explore Hoopoe
+        v-btn(light) Explore Hoopoe
       scrollIndicator()
     
 </template>
@@ -39,6 +39,7 @@ export default {
   overflow hidden
 .pimage
   position:absolute
+  height 100vh
   left:0
   right:0
   top:0

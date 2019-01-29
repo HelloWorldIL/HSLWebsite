@@ -1,8 +1,8 @@
 <template lang="pug">
-    div.Container
-      Parallax.header
-      section.content
-        p {{$store.state.home.data}}
+  v-app(dark)
+    Parallax.header
+    section.content 
+      p {{$store.state.home.data}}
 </template>
 
 
@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style lang="stylus">
+*
+  box-sizing border-box
+
 body
   font-size: 20px
   font-family: 'Open Sans', sans-serif

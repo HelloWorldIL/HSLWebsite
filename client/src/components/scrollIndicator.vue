@@ -1,7 +1,6 @@
 <template lang="pug">
-  div.container
-    div.scrollIndicator
-      div
+  div.scrollIndicator
+    div
 </template>
 
 <script>
@@ -14,9 +13,6 @@ export default {
 <style lang="stylus" scoped>
 size = 2
 color = white
-
-.container
-  // Background size and color
 
 .scrollIndicator
   // Centering

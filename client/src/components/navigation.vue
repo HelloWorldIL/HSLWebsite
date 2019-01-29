@@ -4,7 +4,7 @@
       h1 HSL
     ul.nav-links
       li(v-for="navItem in $store.state.navigation.items")
-        router-link(tag="a" :to="navItem.link") {{navItem.title}}
+        router-link(:to="navItem.link") {{navItem.title}}
 			
 </template>
 
@@ -88,10 +88,14 @@ nav.topNav {
       text-decoration none
     }
 
-    a:hover, a.selected {
+    > :hover{
       background-color: linkHoverColor;
       opacity: 1;
       border-bottom: solid 1px white;
+    }
+    > .router-link-exact-active{
+      opacity 1
+      border-bottom solid 1px white
     }
   }
 }
