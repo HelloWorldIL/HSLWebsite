@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     header
-        navigation
+      navigation
     router-view(class="main")
 </template>
 
