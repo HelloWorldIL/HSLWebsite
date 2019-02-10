@@ -5,7 +5,7 @@
       h1 {{$store.state.home.heading}}
       h1 {{$store.state.home.subHeading}}
       router-link(tag="div" to="/login")
-        v-btn(light) Explore Hoopoe
+        v-btn(light) Login to your account
       scrollIndicator()
     
 </template>

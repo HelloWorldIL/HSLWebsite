@@ -1,6 +1,7 @@
 <template lang="pug">
   div.scrollIndicator
-    div
+    div.dot
+    <span>&#8595;</span>
 </template>
 
 <script>
@@ -25,7 +26,7 @@ color = white
   width size * 20px
   height size * 40px
   border-radius size * 20px
-  > div
+  > div.dot
     // Positioning
     position relative
     left 50%
@@ -38,6 +39,10 @@ color = white
     background color
     
     animation scrollIndicator 2s infinite ease-in-out
+  > span 
+    position relative
+    top 65px 
+    transform translate(-100%, 50%)
 
 @keyframes scrollIndicator
   0%
