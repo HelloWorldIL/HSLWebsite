@@ -1,7 +1,11 @@
 <template lang="pug">
-  v-app(dark)
-    Parallax.header
-    section.content 
+  v-app(dark).page
+    Parallax.header(background-image="/static/img.jpg")
+      h1 {{$store.state.home.heading}}
+      h1 {{$store.state.home.subHeading}}
+      router-link(tag="div" to="/login")
+        v-btn(light) Login to your account
+    section.content
       p {{$store.state.home.data}}
 </template>
 
@@ -30,6 +34,4 @@ body
 section
   text-align: center
   padding: 50px 80px
-  height 1000px
-
 </style>

@@ -1,15 +1,11 @@
 <template lang="pug">
   div.proot
-    div.pimage
+    div.pimage(v-bind:style="{ 'background-image': 'url(' + backgroundImage +')'}")
     div.pcontent
-      h1 {{$store.state.home.heading}}
-      h1 {{$store.state.home.subHeading}}
-      router-link(tag="div" to="/login")
-        v-btn(light) Login to your account
-      scrollIndicator()
+      slot
+      scrollIndicator
     
 </template>
-
 <script>
 import scrollIndicator from './scrollIndicator'
 
@@ -17,19 +13,32 @@ export default {
   components: {
     scrollIndicator
   },
-
+  props: {
+    backgroundImage:{
+      type: String,
+      default: "/static/img.jpg"
+    },
+    height:{
+      type: String,
+      default: "100vh"
+    }
+  },
   mounted: function(){
     // Parallax Effect
     // Does not work on mobile
+    const parallax = document.getElementsByClassName('pimage')[0]
+    const proot = document.getElementsByClassName('proot')[0]
+    proot.style.height = this.height
+    parallax.style.height = this.height
     if (!/Mobi|Android/i.test(navigator.userAgent)) {
       const scrollSpeed = 0.2 // This is % of scroll speed: 0 Image is static, 1 no parallax effect
-      const parallax = document.getElementsByClassName('pimage')[0]
       window.addEventListener('scroll', function(){
         let offset = window.pageYOffset
         parallax.style.backgroundPositionY = -offset * scrollSpeed + 'px'
       })
     }
-  }
+  },
+
 }
 </script>
 
@@ -39,12 +48,12 @@ export default {
   overflow hidden
 .pimage
   position:absolute
-  height 100vh
+
   left:0
   right:0
   top:0
   bottom:0
-  background url('../../public/img.jpg') 50% 0px no-repeat fixed
+  background-attachment fixed
   background-size cover
   background-repeat no-repeat
   filter brightness(0.9)

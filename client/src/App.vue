@@ -1,8 +1,8 @@
 <template lang="pug">
-  div
+  div.root
     header
       navigation
-    transition(name="fade" mode="out-in")
+    transition(name="fade" mode="out-in" enter-active-class="animated slideInLeft faster" leave-active-class="animated slideOutLeft faster")
       router-view(class="main")
 </template>
 
@@ -16,17 +16,3 @@ export default {
   }
 }
 </script> 
-
-<style lang="stylus" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0
-}
-</style>
