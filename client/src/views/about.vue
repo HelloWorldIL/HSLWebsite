@@ -21,11 +21,13 @@ export default {
 <style lang="stylus" scoped>
 .aboutSection
   display grid
-  grid-template-columns 200px 1fr 2fr 200px
-  grid-template-rows 50px auto
+  margin-top 50px
+  grid-template-columns 100px 1fr 1fr 100px
+  grid-template-areas:
+    ". title text ."
+
   > .aboutTitle
-    grid-column-start 2
-    grid-row-start 2
+    grid-area title
     display flex
     background #212121
     align-items center
@@ -36,7 +38,14 @@ export default {
       display inline-block
       vertical-align middle
   > .aboutText
+    grid-area text
     padding 0px 50px
-    grid-column-start 3
-    grid-row-start 2
+
+
+@media only screen and (max-width: 1200px) {
+  .aboutSection {
+    grid-template-areas:
+    ". title title ." ". text text .";
+  }
+}
 </style>
