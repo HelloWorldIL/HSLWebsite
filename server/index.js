@@ -22,7 +22,7 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(bundler.middleware()) // Takes over scope - register server routes and static before this!
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 
 server.listen(port, () => {
   console.log(`Server started on port ${port}`)
