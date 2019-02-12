@@ -3,7 +3,7 @@
     div.pimage(v-bind:style="{ 'background-image': 'url(' + backgroundImage +')'}")
     div.pcontent
       slot
-      scrollIndicator
+      scrollIndicator(v-if="scroll")
     
 </template>
 <script>
@@ -21,6 +21,10 @@ export default {
     height:{
       type: String,
       default: "100vh"
+    },
+    scroll:{
+      type: Boolean,
+      default: false
     }
   },
   mounted: function(){
@@ -56,7 +60,7 @@ export default {
   background-attachment fixed
   background-size cover
   background-repeat no-repeat
-  filter brightness(0.9)
+  filter brightness(0.5)
   z-index:1
  
 .pcontent

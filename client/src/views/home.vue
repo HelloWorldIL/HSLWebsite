@@ -1,6 +1,6 @@
 <template lang="pug">
-  v-app(dark).page
-    Parallax.header(background-image="/static/img.jpg")
+  v-app().page
+    Parallax.header(background-image="/static/img.jpg" scroll)
       h1 {{$store.state.home.heading}}
       h1 {{$store.state.home.subHeading}}
       router-link(tag="div" to="/login")
