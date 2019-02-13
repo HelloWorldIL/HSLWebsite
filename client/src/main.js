@@ -4,7 +4,9 @@ import router from './router'
 import VueSocketIO from 'vue-socket.io'
 import Vuetify from 'vuetify'
 
-
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import 'vuetify/dist/vuetify.min.css'
+import 'animate.css'
 import colors from 'vuetify/lib/util/colors'
 
 import { store } from './services/store/store'

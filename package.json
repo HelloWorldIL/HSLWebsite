@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development & node server/index.js",
+    "start": "node server/index.js",
     "dev": "SET NODE_ENV=development & nodemon --max-old-space-size=8192 --watch server server/index.js"
   },
   "author": "",
